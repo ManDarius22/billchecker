@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="814,7459.333333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,55 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF.ExtractPDFText</x:String>
+      <x:String>UiPath.IntelligentOCR.StudioWeb.Activities.PDF</x:String>
+      <x:String>UiPath.Vision.Core.OCR</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Activities.Contracts</x:String>
+      <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.GSuite.Drive.Models</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -52,13 +101,298 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.StudioWeb.Activities</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Activities.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="700,7394.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_clients" />
+      <Variable x:TypeArguments="x:String" Name="emailPass" />
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="mailTrigger" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_headers" />
+      <Variable x:TypeArguments="x:String" Name="senderAdress" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="638,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAtjrJ7SUNfEiTOegHadDeYwAAAAACAAAAAAAQZgAAAAEAACAAAAD3IjZzUxBG6Ro1X7jzv+6S9EKSOYyOtSC/syBYh/JYuAAAAAAOgAAAAAIAACAAAAA7HCWVfOpLlabmNzzS+BBJ9XpSTegA6xc6xlVqLAQZMSAAAAB4rHTR0hkQ21PQCi3DJX49QtVanBgIpkKqLlQ7UAfGuEAAAADpUaydJuQTdMLDmrErrKGGKHBAmx8im/rj8R+LrlWNsu8PWiMZtHUdI/pkQTBmTGpo057bSnlKIF4slRWzaEbp" Result="[emailPass]" />
+    <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" FilterExpression="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="mancare2022@gmail.com" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="638,25.333333333333332" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="True" Messages="[mailTrigger]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Password="[emailPass]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="30" />
+    <If Condition="[mailTrigger.where(Function(s) s.Subject.Contains(&quot;Verificare facturi&quot;)).Any]" sap:VirtualizedContainerService.HintSize="638,6874.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="604,6458.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Int32" Name="foreach_Index" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,362.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[mailTrigger]">
+            <ui:ForEach.Body>
+              <ActivityAction x:TypeArguments="snm:MailMessage">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,172.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[senderAdress]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[item.SenderEmailAddress]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEach.Body>
+          </ui:ForEach>
+          <ui:BuildDataTable DataTable="[dt_headers]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Nume_client&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Denumire_x0020_client&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;CUI&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Nr_factura&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Data_factura&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Nr_factura_data&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Cod_produs&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Valoare_factura&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Observatii&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_headers]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="562,116" sap2010:WorkflowViewState.IdRef="WriteRange_3" SheetName="Sheet1" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_clients]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="562,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data/Baza_clienti.xlsx" />
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[foreach_Index]" DataTable="[dt_clients]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="562,5584.666666666667" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+            <ui:ForEachRow.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="528,5394.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="fileFound" />
+                    <Variable x:TypeArguments="x:String" Name="dt_bill" />
+                    <Variable x:TypeArguments="x:String" Name="billsData" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:FileExistsX DisplayName="File Exists" Exists="[fileFound]" sap:VirtualizedContainerService.HintSize="486,136.66666666666666" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[&quot;Data/&quot; + CurrentRow(&quot;CUI&quot;).ToString + &quot;.pdf&quot;]" />
+                  <If Condition="[fileFound]" sap:VirtualizedContainerService.HintSize="486,5130.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="452,4714.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="regexNumeClient" />
+                          <Variable x:TypeArguments="x:String" Name="regexCUI" />
+                          <Variable x:TypeArguments="x:String" Name="regexNumeFactura" />
+                          <Variable x:TypeArguments="scg:List(x:String)" Name="pdfListDetails" />
+                          <Variable x:TypeArguments="x:String" Name="test" />
+                          <Variable x:TypeArguments="x:String" Name="regexDataFactura" />
+                          <Variable x:TypeArguments="x:String" Name="regexTotalFactura" />
+                          <Variable x:TypeArguments="x:String" Name="observatii_value" />
+                          <Variable x:TypeArguments="x:String" Name="regexCodProduse" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Specific PDF found&quot;]" />
+                        <ui:ReadPDFWithOCR DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" FileName="[&quot;Data/&quot; + CurrentRow(&quot;CUI&quot;).ToString + &quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="410,159.33333333333334" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_4" ImageDpi="150" Range="All" Text="[billsData]">
+                          <ui:ReadPDFWithOCR.OCREngine>
+                            <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                              <ActivityFunc.Argument>
+                                <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                              </ActivityFunc.Argument>
+                              <p:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,25.333333333333332" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_2" Image="[Image]" Language="auto" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                            </ActivityFunc>
+                          </ui:ReadPDFWithOCR.OCREngine>
+                        </ui:ReadPDFWithOCR>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[billsData]" />
+                        <ui:Matches BuilderPattern="&quot;\bSC\s(\w+)\s(srl)\b&quot;" DisplayName="Find Matching Patterns" FirstMatch="[regexNumeClient]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[billsData]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;\&quot;\\bSC\\s(\\w+)\\s(srl)\\b\&quot;&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="\bSC\s(\w+)\s(srl)\b" RegexOption="IgnoreCase, Compiled" />
+                        <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[regexCUI]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_5" Input="[billsData]" IsBuilderTabModified="False" Pattern="(?&lt;=CUI:\s*)\d+" RegexOption="IgnoreCase, Compiled" />
+                        <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[regexNumeFactura]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_6" Input="[billsData]" IsBuilderTabModified="False" Pattern="(?&lt;=nr\.:\s*)\d+|(?&lt;=data:\s*)\d+\.\d+\.\d+" RegexOption="IgnoreCase, Compiled" />
+                        <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[regexDataFactura]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_7" Input="[billsData]" IsBuilderTabModified="False" Pattern="(?&lt;=data:\s*)\d{2}\.\d{2}\.\d{4}" RegexOption="IgnoreCase, Compiled" />
+                        <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[regexTotalFactura]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_8" Input="[billsData]" IsBuilderTabModified="False" Pattern="(?&lt;=Total de plata\s+)\d+" RegexOption="IgnoreCase, Compiled" />
+                        <ui:Matches DisplayName="Find Matching Patterns" FirstMatch="[regexCodProduse]" sap:VirtualizedContainerService.HintSize="410,60" sap2010:WorkflowViewState.IdRef="Matches_9" Input="[billsData]" IsBuilderTabModified="False" Pattern="(?&lt;=TVA Total\s+)\d+" RegexOption="IgnoreCase, Compiled" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Client: &quot; + regexNumeClient +&quot; CUI: &quot; +regexCUI + &quot; Nr factura: &quot; +regexNumeFactura + &quot; Data: &quot; + regexDataFactura + &quot; Total de plata: &quot; +regexTotalFactura + &quot; Cod produse: &quot; + regexCodProduse]" />
+                        <ui:WriteCell Cell="[&quot;A&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_9" SheetName="Sheet1" Text="[CurrentRow(&quot;Nume_client&quot;).ToString.Trim]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;B&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_10" SheetName="Sheet1" Text="[regexNumeClient]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;C&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_11" SheetName="Sheet1" Text="[CurrentRow(&quot;Cui&quot;).ToString.Trim]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;D&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_12" SheetName="Sheet1" Text="[CurrentRow(&quot;Nr_factura&quot;).ToString.Trim]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;E&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_13" SheetName="Sheet1" Text="[CurrentRow(&quot;Data_factura&quot;).ToString.Trim]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;F&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_14" SheetName="Sheet1" Text="[regexNumeFactura]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;G&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_20" SheetName="Sheet1" Text="[regexCodProduse]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;H&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_15" SheetName="Sheet1" Text="[regexTotalFactura]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                        <ui:WriteCell Cell="[&quot;E&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="410,116" sap2010:WorkflowViewState.IdRef="WriteCell_19" SheetName="Sheet1" Text="[regexCodProduse]" WorkbookPath="Data\Baza_clienti.xlsx" />
+                        <If Condition="[regexNumeFactura.Equals(CurrentRow(&quot;Nr_factura&quot;).ToString.Trim) and regexDataFactura.Equals(CurrentRow(&quot;Data_factura&quot;).ToString.Trim)]" sap:VirtualizedContainerService.HintSize="410,596.6666666666666" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,331.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ReadCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadCell_1" SheetName="Sheet1" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]">
+                                <ui:ReadCell.Result>
+                                  <OutArgument x:TypeArguments="x:String">[observatii_value]</OutArgument>
+                                </ui:ReadCell.Result>
+                              </ui:ReadCell>
+                              <ui:WriteCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_16" SheetName="Sheet1" Text="[observatii_value + &quot; // Numar factura sau data diferita&quot;]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <If Condition="[regexNumeClient.Equals(CurrentRow(&quot;Nume_client&quot;).ToString.Trim)]" sap:VirtualizedContainerService.HintSize="410,596.6666666666666" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,331.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ReadCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadCell_2" SheetName="Sheet1" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]">
+                                <ui:ReadCell.Result>
+                                  <OutArgument x:TypeArguments="x:String">[observatii_value]</OutArgument>
+                                </ui:ReadCell.Result>
+                              </ui:ReadCell>
+                              <ui:WriteCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="[observatii_value + &quot; // Nume_client diferit pe factura&quot;]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                        <If Condition="[regexTotalFactura.Equals(CurrentRow(&quot;Valoare_factura&quot;).ToString.Trim)]" sap:VirtualizedContainerService.HintSize="410,596.6666666666666" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="300,81.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,331.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ReadCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Read Cell Workbook" sap:VirtualizedContainerService.HintSize="334,88" sap2010:WorkflowViewState.IdRef="ReadCell_3" SheetName="Sheet1" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]">
+                                <ui:ReadCell.Result>
+                                  <OutArgument x:TypeArguments="x:String">[observatii_value]</OutArgument>
+                                </ui:ReadCell.Result>
+                              </ui:ReadCell>
+                              <ui:WriteCell Cell="[&quot;I&quot;+(foreach_Index + 2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteCell_18" SheetName="Sheet1" Text="[observatii_value + &quot; // Total de plata diferit pe factura&quot;]" WorkbookPath="[&quot;Data/Rezultatefacturi_&quot; + DateTime.Now.ToString(&quot;dd_MM_yyyy&quot;) + &quot;.xlsx&quot;]" />
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,232" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Specific PDF not found&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </ui:ForEachRow.Body>
+          </ui:ForEachRow>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,232" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Empty Inbox&quot;]" />
+        </Sequence>
+      </If.Else>
+    </If>
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" UseOAuth="{x:Null}" Body="Buna ziua&#xD;&#xA;&#xD;&#xA;Procesul a fost finalizat cu succes. Se poate verifica rezultatul accesand sharefolderul dedicat.&#xD;&#xA;&#xD;&#xA;O zi buna!&#xD;&#xA;" DisplayName="Send SMTP Mail Message" Email="mancare2022@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="638,238.66666666666666" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[emailPass]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Verificare facturi" TimeoutMS="60000" To="[senderAdress]">
+      <ui:SendMail.Files>
+        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+      </ui:SendMail.Files>
+    </ui:SendMail>
   </Sequence>
 </Activity>
